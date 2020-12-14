@@ -4,8 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, HttpModule } from '@angular/http';
 import { AdsenseModule } from 'ng2-adsense';
 
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './shared';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,10 @@ import { AppComponent } from './app.component';
 	AdsenseModule.forRoot({
       adClient: 'ca-pub-0437258559459382'
     }),
+	AppRoutingModule,
 
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
